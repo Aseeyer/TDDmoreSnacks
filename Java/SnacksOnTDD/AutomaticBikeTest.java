@@ -59,4 +59,40 @@ class AutomaticBikeTest {
         assertEquals(48, bike.getSpeed());
     }
 
+    @Test
+    public void testThatBikeCanDecelerateInGearOne() {
+        AutomaticBike bike = new AutomaticBike();
+        bike.turnOn();
+        bike.setSpeed(15);
+        bike.decelerate();
+        assertEquals(14, bike.getSpeed());
+    }
+
+    @Test
+    public void testThatBikeCanDecelerateInGearTwo() {
+        AutomaticBike bike = new AutomaticBike();
+        bike.turnOn();
+        bike.setSpeed(24);
+        bike.decelerate();
+        assertEquals(22, bike.getSpeed());
+    }
+
+    @Test
+    public void testThatBikeCanDecelerateInGearThree() {
+        AutomaticBike bike = new AutomaticBike();
+        bike.turnOn();
+        bike.setSpeed(36);
+        bike.decelerate();
+        assertEquals(33, bike.getSpeed());
+    }
+
+    @Test
+    public void testThatBikeCanDecelerateInGearFour() {
+        AutomaticBike bike = new AutomaticBike();
+        bike.turnOn();
+        bike.setSpeed(44);
+        bike.decelerate();
+        assertEquals(40, bike.getSpeed());
+    }
+
 }
