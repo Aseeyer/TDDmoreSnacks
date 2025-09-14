@@ -53,7 +53,7 @@ class AutomaticBikeTest {
     @Test
     public void testThatBikeCanBeAccelerateInGearFour() {
         AutomaticBike bike = new AutomaticBike();
-        bike.turnOff();
+        bike.turnOn();
         bike.setSpeed(44);
         bike.accelerate();
         assertEquals(48, bike.getSpeed());

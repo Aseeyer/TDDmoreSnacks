@@ -22,33 +22,18 @@ public class AutomaticBike {
         return speed;
     }
 
+    private int getIncrement() {
+        if (speed <= 20) return 1;
+        else if (speed <= 30) return 2;
+        else if (speed <= 40) return 3;
+        else return 4;
+    }
+
     public void accelerate() {
-        if (speed >= 0 && speed <= 20) {
-            speed += 1;
-        }
-        else if (speed >= 21 && speed <= 30) {
-            speed += 2;
-        }
-        else if (speed >= 31 &&  speed <= 40) {
-            speed += 3;
-        }
-        else if (speed >= 41 && speed <= 50) {
-            speed += 4;
-        }
+        if (isOn) speed += getIncrement();
     }
 
     public void decelerate() {
-        if (speed >= 0 && speed <= 20) {
-            speed = Math.max(0, speed - 1);
-        }
-        else if (speed >= 21 && speed <= 30) {
-            speed = Math.max(0, speed - 2);
-        }
-        else if (speed >= 31 && speed <= 40) {
-            speed = Math.max(0, speed - 3);
-        }
-        else if (speed >= 41 && speed <= 50) {
-            speed = Math.max(0, speed - 4);
-        }
+        if (isOn) speed = Math.max(0, speed - getIncrement());
     }
 }
